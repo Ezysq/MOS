@@ -38,7 +38,7 @@ public class RM {
         int wCount= 16;
         cpu.setMODE(USER);
         try{
-            BufferedReader fileReader = new BufferedReader(new FileReader("E:\\GIT\\vr-rm\\1.txt"));
+            BufferedReader fileReader = new BufferedReader(new FileReader("1.txt"));
             while(fileReader.ready()){
                 String currentLine = fileReader.readLine();
                 if(currentLine.isEmpty()){
