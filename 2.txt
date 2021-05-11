@@ -1,0 +1,6 @@
+$STR
+GA20
+GB21
+CMP_
+JE00
+$END
