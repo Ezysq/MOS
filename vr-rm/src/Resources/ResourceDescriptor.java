@@ -5,17 +5,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.UUID;
 
-public class ResourceQueue {
+public class ResourceDescriptor {
     Queue<Process> queue = new LinkedList<Process>();
     void addToQueue(Process process){
         queue.add(process);
     }
 }
 public class Resource{
-    public HashMap<UUID, ResourceQueue> resourceList = new HashMap<UUID, ResourceQueue>();
-    class MOSEnd extends ResourceQueue{}
-    class fromUserInterface extends ResourceQueue{}
-    class Duomenu_vieta extends ResourceQueue{
+    public HashMap<UUID, ResourceDescriptor> resourceList = new HashMap<UUID, ResourceDescriptor>();
+    class MOSEnd extends ResourceDescriptor{}
+    class fromUserInterface extends ResourceDescriptor{}
+    class Duomenu_vieta extends ResourceDescriptor{
         UUID id;
         //resurso elementai
         /** Duomenu_vieta resursas, mes jo neturim, ar reikia? Loader naudojamas**/
@@ -46,21 +46,21 @@ public class Resource{
              }
     }
 
-    class TaskInSuperMemory extends ResourceQueue{}
-    class InfoAboutPaths extends ResourceQueue{}
-    class ChannelDevice extends ResourceQueue{}
-    class FromLoader extends ResourceQueue{}
-    class LineInMemory extends ResourceQueue{}
-    class WaitingForInput extends ResourceQueue{}
-    class TaskExecutionParametersInSuperMemory extends ResourceQueue{}
-    class ExternalMemory extends ResourceQueue{}
-    class TaskActivated extends ResourceQueue{}
-    class UserMemory extends ResourceQueue{}
-    class FromInterrupt extends ResourceQueue{}
-    class UserInput extends ResourceQueue{}
-    class Semaphore extends ResourceQueue{}
-    class FromMemoryGovernor extends ResourceQueue{}
-    class Interrupt extends ResourceQueue{}
+    class TaskInSuperMemory extends ResourceDescriptor{}
+    class InfoAboutPaths extends ResourceDescriptor{}
+    class ChannelDevice extends ResourceDescriptor{}
+    class FromLoader extends ResourceDescriptor{}
+    class LineInMemory extends ResourceDescriptor{}
+    class WaitingForInput extends ResourceDescriptor{}
+    class TaskExecutionParametersInSuperMemory extends ResourceDescriptor{}
+    class ExternalMemory extends ResourceDescriptor{}
+    class TaskActivated extends ResourceDescriptor{}
+    class UserMemory extends ResourceDescriptor{}
+    class FromInterrupt extends ResourceDescriptor{}
+    class UserInput extends ResourceDescriptor{}
+    class Semaphore extends ResourceDescriptor{}
+    class FromMemoryGovernor extends ResourceDescriptor{}
+    class Interrupt extends ResourceDescriptor{}
 }
 
 
