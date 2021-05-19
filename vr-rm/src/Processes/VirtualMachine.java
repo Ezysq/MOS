@@ -1,6 +1,13 @@
 package Processes;
 
 class VirtualMachine extends ProcessDescriptor {
+
+    public VirtualMachine(String name, int priority, String Father, ProcessList process, ProcessPlanner planner,
+                          ResourceList resources/*,
+                          VirtualMachine VisuLaukianciuSarasas laukiantysResurso,ResursuPrimityvai Rveiksmai,RealiMasina reali,VirtualiMasina vm,VirtualiosMasinosAtmintis vmatmintis*/){
+        super(name, priority, parent, planner);
+
+    }
     public ProcessPriority priority;
     public ProcessState state;
 

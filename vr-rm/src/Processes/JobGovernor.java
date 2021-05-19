@@ -31,15 +31,21 @@ class JobGovernor extends ProcessDescriptor{
                 break;
             case 9:
                 //Įvedimo-išvedimo pertraukimas? -->Taip:10; Ne:14
+                if (command.substring(0,2) == "GD" || command.substring(0,2) == "PD") {this.processCase=10;}
+                else this.processCase=14;
                 break;
             case 10:
                 //Ar tai ivedimo pertraukimas? -->Taip:11, ne:12
+                if (command.substring(0,2) == "GD"){this.processCase=11;}
+                else this.processCase=12;
                 break;
             case 11:
                 //Atlaisvinamas resursas ,,WaitingForInput''
                 break;
             case 12:
                 //Ar tai isvedimo pertraukimas? -->Taip:21, ne:7
+                if (command.substring(0,2) == "PD"){this.processCase=21;}
+                else this.processCase=7;
                 break;
             case 13:
                 //Proceso ,,VirtualMachine'' aktyvavimas

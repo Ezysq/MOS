@@ -1,2 +1,6 @@
-package LIst;public class List {
+package List;
+
+public class List {
+
+
 }

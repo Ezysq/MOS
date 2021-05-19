@@ -16,6 +16,8 @@ class JCL extends ProcessDescriptor{
                 break;
             case 4:
                 //Ar tai $STR blokas? ->Ne:5; Taip:6
+                if (command == "$STR" ){this.processCase=6;}
+                else this.processCase=5;
                 break;
             case 5:
                 //Atlaisvinti resursą ,,lineInMemory'' su pranešimu apie $STR bloko nebuvimą
@@ -42,6 +44,8 @@ class JCL extends ProcessDescriptor{
                 break;
             case 12:
                 //Ar tai $END blokas? --->Taip:14; Ne:13
+                if (command == "$END" ){this.processCase=14;}
+                else this.processCase=13;
                 break;
             case 13:
                 //Atlaisvinti resursą ,,lineInMemory'' su pranešimu apie $END bloko nebuvimą
@@ -49,6 +53,8 @@ class JCL extends ProcessDescriptor{
                 break;
             case 14:
                 //Ar programų sąrašas tuščias? ---> Taip: 16, ne: 15
+                if (/*programų sąrašas tuščias*/){this.processCase=16;}
+                else this.processCase=15;
                 break;
             case 15:
                 //Atlaisvinamas resursas ,,TaskInSuperMemory’’.

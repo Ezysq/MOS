@@ -1,7 +1,5 @@
 package Processes;
 
-import Resources.ResourceQueue;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -41,7 +39,7 @@ public class ProcessDescriptor{
     /**Ar sarasams kuriam klases, ar listus*/
     public void work() {}; /**ar reikia?**/
     //public ArrayList<ProcessQ> children = new ArrayList<ProcessQ>(); /**man children pavad nepatinka*//
-    public ArrayList<ResourceQueue> resources = new ArrayList<ResourceQueue>();
+   // public ArrayList<ResourceQueue> resources = new ArrayList<ResourceQueue>();
 
     public ProcessDescriptor() {}
     public ProcessDescriptor(String name, int priority, String parent, ProcessPlanner planner){
@@ -68,6 +66,17 @@ public class ProcessDescriptor{
     public void setPriority(int priority){
         this.priority=priority;
     }
+
+     public void createProcess(ProcessQ parent, ProcessState initialState, ProcessPriority priority,
+                              ArrayList<String> elements, String externalName){
+        ProcessQ process = newInstance(externalName);//sukuriamas procesas
+        runningProcesses.add(process); //registruojamas bendrajame procesų sąraše
+        parent.children.add(process);  //registruojamas tėvo-sūnų sąraše
+        /**skaičiuojamas vidinis identifikacijos numeris
+         process.children.clear();  //sukuriamas tuščias jo vaikų procesų sąrašas
+         process.resources.clear(); //sukurtų resursų sąrašas
+         planner();*/
+
 
 }
 /**
